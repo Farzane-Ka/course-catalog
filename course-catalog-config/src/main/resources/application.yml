@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: catalog service
+greeting: greeting from the default profile
+  
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+greeting: greeting from prod profile
