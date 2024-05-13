@@ -18,12 +18,12 @@
     </properties>
 
     <dependencies>
-        <!-- siblings -->
+        <!-- kotlin -->
         <dependency>
-            <groupId>com.kotlinspring.course.catalog</groupId>
-            <artifactId>course-catalog-config</artifactId>
-            <version>${project.version}</version>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
         </dependency>
+        <!-- siblings -->
         <dependency>
             <groupId>com.kotlinspring.course.catalog</groupId>
             <artifactId>course-catalog-controller</artifactId>
