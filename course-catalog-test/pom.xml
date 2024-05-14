@@ -24,17 +24,32 @@
             <version>${kotlin.version}</version>
         </dependency>
 
-        <!-- Siblings -->
+        <!--siblings-->
         <dependency>
             <groupId>com.kotlinspring.course.catalog</groupId>
             <artifactId>course-catalog-controller</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>com.kotlinspring.course.catalog</groupId>
             <artifactId>course-catalog-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
             <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.kotlinspring.course.catalog</groupId>
+            <artifactId>course-catalog-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kotlinspring.course.catalog</groupId>
+            <artifactId>course-catalog-persistence</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.kotlinspring.course.catalog</groupId>
+            <artifactId>course-catalog-database</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

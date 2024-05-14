@@ -20,6 +20,9 @@
 		<module>course-catalog-service</module>
 		<module>course-catalog-controller</module>
         <module>course-catalog-test</module>
+		<module>course-catalog-persistence</module>
+		<module>course-catalog-model</module>
+        <module>course-catalog-database</module>
     </modules>
 	<properties>
 		<jvm.target.version>17</jvm.target.version>
@@ -59,12 +62,6 @@
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
 			<artifactId>kotlin-stdlib</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>io.github.microutils</groupId>

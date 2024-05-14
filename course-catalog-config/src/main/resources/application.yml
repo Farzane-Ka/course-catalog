@@ -3,5 +3,15 @@ spring:
     name: catalog service
     profiles:
       active: default
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: appData
+  jpa:
+    hibernate:
+      ddl-auto: none
 greeting:
   message: greeting from the default profile
+
+

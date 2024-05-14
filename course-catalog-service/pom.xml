@@ -18,15 +18,22 @@
     </properties>
 
     <dependencies>
+        <!-- kotlin -->
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!--siblings-->
         <dependency>
             <groupId>com.kotlinspring.course.catalog</groupId>
-            <artifactId>course-catalog-config</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>course-catalog-persistence</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
