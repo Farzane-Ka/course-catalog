@@ -16,7 +16,6 @@ class GreetingController(val greetingService: GreetingService) {
     @GetMapping("/{name}")
     fun retrieveGreeting(@PathVariable("name") name: String): String {
         logger.info("name is $name")
-        greetingService.listAll()
         return greetingService.retrieveGreeting(name)
     }
 

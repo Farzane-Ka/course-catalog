@@ -1,5 +1,7 @@
-package com.kotlinspring.course.catalog.test
+package com.kotlinspring.course.catalog.controller.greeting
 
+import com.kotlinspring.course.catalog.controller.AbstractControllerIntegrationTest
+import com.kotlinspring.course.catalog.controller.config.ControllerTestConfig
 import com.kotlinspring.course.catalog.service.config.GreetingConfigTest
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
@@ -20,12 +22,7 @@ import org.springframework.test.web.reactive.server.WebTestClient
 @AutoConfigureWebTestClient
 @EnableAutoConfiguration
 @ExtendWith(SpringExtension::class)
-@ComponentScan("com.kotlinspring.course.catalog")
-@EnableJpaRepositories("com.kotlinspring.course.catalog")
-@EntityScan("com.kotlinspring.course.catalog")
-@ContextConfiguration(classes = [GreetingConfigTest::class])
-@ActiveProfiles("dev")
-class GreetingIntegrationTest {
+class GreetingControllerIntegrationTest : AbstractControllerIntegrationTest() {
 
     @Autowired
     lateinit var webTestClient: WebTestClient

@@ -19,7 +19,6 @@
 		<module>course-catalog-main</module>
 		<module>course-catalog-service</module>
 		<module>course-catalog-controller</module>
-        <module>course-catalog-test</module>
 		<module>course-catalog-persistence</module>
 		<module>course-catalog-model</module>
         <module>course-catalog-database</module>

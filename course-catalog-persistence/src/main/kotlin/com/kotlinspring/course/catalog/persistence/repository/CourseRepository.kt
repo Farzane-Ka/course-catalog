@@ -1,6 +1,6 @@
-package com.kotlinspring.course.catalog.repository
+package com.kotlinspring.course.catalog.persistence.repository
 
-import com.kotlinspring.course.catalog.entity.Course
+import com.kotlinspring.course.catalog.model.entity.Course
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 import java.util.UUID
