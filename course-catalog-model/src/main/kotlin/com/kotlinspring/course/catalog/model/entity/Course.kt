@@ -8,6 +8,7 @@ import java.util.UUID
 data class Course(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "course_id")
     val courseId: UUID?,
     var name: String,
     var category: String,

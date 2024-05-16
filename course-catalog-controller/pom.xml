@@ -72,6 +72,12 @@
         </dependency>
         <dependency>
             <groupId>com.kotlinspring.course.catalog</groupId>
+            <artifactId>course-catalog-persistence</artifactId>
+            <version>${project.version}</version>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.kotlinspring.course.catalog</groupId>
             <artifactId>course-catalog-database</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -147,6 +153,9 @@
                     </includes>
                     <systemPropertyVariables>
                         <greeting.message>${greeting.message}</greeting.message>
+                        <db.url>${db.url}</db.url>
+                        <db.user>${db.user}</db.user>
+                        <db.password>${db.password}</db.password>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

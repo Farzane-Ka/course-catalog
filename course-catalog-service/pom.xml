@@ -109,6 +109,9 @@
                     </includes>
                     <systemPropertyVariables>
                         <greeting.message>${greeting.message}</greeting.message>
+                        <db.url>${db.url}</db.url>
+                        <db.user>${db.user}</db.user>
+                        <db.password>${db.password}</db.password>
                     </systemPropertyVariables>
                 </configuration>
             </plugin>

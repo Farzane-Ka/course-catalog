@@ -82,6 +82,9 @@
 			</activation>
 			<properties>
 				<greeting.message>greeting from the default profile</greeting.message>
+				<db.url>jdbc:postgresql://localhost:5432/postgres</db.url>
+				<db.user>postgres</db.user>
+				<db.password>appData</db.password>
 			</properties>
 		</profile>
 	</profiles>

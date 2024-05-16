@@ -18,3 +18,8 @@ fun courseList() = listOf(
     Course(null, "Math course1", "Mathematics"),
     Course(null, "Physics course1", "Physics"),
 )
+
+fun courseDTOList() = listOf(
+    CourseDTO(null, "Math course1", "Mathematics"),
+    CourseDTO(null, "Physics course1", "Physics"),
+)

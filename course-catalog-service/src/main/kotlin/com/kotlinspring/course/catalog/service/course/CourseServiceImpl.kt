@@ -13,8 +13,8 @@ class CourseServiceImpl(val repository: CourseRepository) : CourseService {
 
     companion object : KLogging()
 
-    override fun addCourse(course: CourseDTO): CourseDTO {
-        val courseEntity = course.let {
+    override fun addCourse(courseDTO: CourseDTO): CourseDTO {
+        val courseEntity = courseDTO.let {
             Course(
                 courseId = null,
                 name = it.name,

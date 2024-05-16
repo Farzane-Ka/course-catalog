@@ -26,8 +26,11 @@ class CourseControllerIntegrationTest : AbstractControllerIntegrationTest() {
     @Test
     fun addCourse() {
 
-        val courseDTO = CourseDTO(null, "Build Restful APIs using SpringBoot and Kotlin"
-            ,"Development course")
+        val courseDTO = CourseDTO(
+            null,
+            "Build Restful APIs using SpringBoot and Kotlin",
+            "Development course"
+        )
 
         val savedCourseDTO = webTestClient
             .post()

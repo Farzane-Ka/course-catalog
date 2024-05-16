@@ -2,7 +2,9 @@ package com.kotlinspring.course.catalog.controller.course
 
 import com.kotlinspring.course.catalog.model.course.CourseDTO
 import com.kotlinspring.course.catalog.service.course.CourseService
+import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
+import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -16,11 +18,12 @@ import java.util.UUID
 
 @RestController
 @RequestMapping("/v1/courses")
+@Validated
 class CourseController(val courseService: CourseService) {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun addCourse(@RequestBody course: CourseDTO): CourseDTO = courseService.addCourse(course)
+    fun addCourse(@RequestBody @Valid course: CourseDTO): CourseDTO = courseService.addCourse(course)
 
     @GetMapping
     fun retrieveAllCourses(): List<CourseDTO> = courseService.retrieveAllCourses()

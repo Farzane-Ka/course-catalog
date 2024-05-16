@@ -6,9 +6,4 @@ import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface CourseRepository : JpaRepository<Course, UUID> {
-
-    fun findAllBy(): List<Course>
-
-    fun findAllByCourseId(courseId: UUID): List<Course>
-}
+interface CourseRepository : JpaRepository<Course, UUID>
