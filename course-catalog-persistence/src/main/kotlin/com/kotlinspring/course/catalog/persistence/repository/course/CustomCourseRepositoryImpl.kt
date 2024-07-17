@@ -1,4 +1,4 @@
-package com.kotlinspring.course.catalog.persistence.repository
+package com.kotlinspring.course.catalog.persistence.repository.course
 
 import com.kotlinspring.course.catalog.model.entity.Course
 import jakarta.persistence.EntityManager
@@ -11,6 +11,7 @@ class CustomCourseRepositoryImpl : CustomCourseRepository {
 
     @PersistenceContext
     lateinit var entityManager: EntityManager
+
     @Transactional
     override fun persistAll(courses: List<Course>): List<Course> {
         courses.forEach { entityManager.persist(it) }

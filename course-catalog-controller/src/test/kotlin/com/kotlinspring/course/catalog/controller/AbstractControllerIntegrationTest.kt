@@ -2,7 +2,7 @@ package com.kotlinspring.course.catalog.controller
 
 import com.kotlinspring.course.catalog.controller.config.ControllerTestConfig
 import com.kotlinspring.course.catalog.persistence.config.PersistenceTestConfig
-import com.kotlinspring.course.catalog.persistence.repository.CourseRepository
+import com.kotlinspring.course.catalog.persistence.repository.course.CourseRepository
 import com.kotlinspring.course.catalog.service.config.GreetingConfigTest
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Tag
@@ -22,13 +22,4 @@ import java.util.*
 @ContextConfiguration(classes = [ControllerTestConfig::class, GreetingConfigTest::class, PersistenceTestConfig::class])
 @EntityScan("com.kotlinspring.course.catalog")
 @Tag("integration-test")
-abstract class AbstractControllerIntegrationTest {
-
-    @Autowired
-    lateinit var repository: CourseRepository
-
-    @BeforeEach
-    fun before(testInfo: TestInfo) {
-        repository.deleteAll()
-        }
-}
+abstract class AbstractControllerIntegrationTest

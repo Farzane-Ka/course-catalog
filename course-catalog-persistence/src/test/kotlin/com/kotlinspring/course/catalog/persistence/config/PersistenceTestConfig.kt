@@ -18,6 +18,7 @@ import java.util.*
 import javax.sql.DataSource
 
 @Configuration
+@Profile("dev")
 @EnableTransactionManagement
 @ComponentScan("com.kotlinspring.course.catalog.persistence")
 @EnableJpaRepositories("com.kotlinspring.course.catalog.persistence")
@@ -26,7 +27,6 @@ class PersistenceTestConfig {
     val dbUrl: String = System.getProperty("db.url")!!
     val dbUser: String = System.getProperty("db.user")!!
     val dbPassword: String = System.getProperty("db.password")!!
-
     val jpaShowSql: Boolean = false
 
     @Bean
@@ -110,9 +110,4 @@ class PersistenceTestConfig {
 
     @Bean
     fun persistenceExceptionTranslationPostProcessor() = PersistenceExceptionTranslationPostProcessor()
-
-//    @Bean
-//    fun iDatabaseConnection(dataSource: DataSource): IDatabaseConnection = DatabaseDataSourceConnection(dataSource)
-//        .apply { this.config.setProperty(PROPERTY_DATATYPE_FACTORY, OracleDataTypeFactory()) }
-
 }

@@ -3,22 +3,31 @@ package com.kotlinspring.course.catalog.service.course
 import com.kotlinspring.course.catalog.model.course.CourseDTO
 import com.kotlinspring.course.catalog.model.entity.Course
 import com.kotlinspring.course.catalog.model.exception.CourseNotFoundException
-import com.kotlinspring.course.catalog.persistence.repository.CourseRepository
+import com.kotlinspring.course.catalog.model.exception.InstructorNotValidException
+import com.kotlinspring.course.catalog.persistence.repository.course.CourseRepository
+import com.kotlinspring.course.catalog.service.instructor.InstructorService
 import mu.KLogging
 import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class CourseServiceImpl(val repository: CourseRepository) : CourseService {
+class CourseServiceImpl(
+    val repository: CourseRepository,
+    val instructorService: InstructorService,
+    ) : CourseService {
 
     companion object : KLogging()
 
     override fun addCourse(courseDTO: CourseDTO): CourseDTO {
+        val optionalInstructor = instructorService.findByInstructorId(courseDTO.instructorId!!)
+        if (!optionalInstructor.isPresent)
+            throw InstructorNotValidException("InstructorId: ${courseDTO.instructorId} is not valid")
         val courseEntity = courseDTO.let {
             Course(
                 courseId = null,
                 name = it.name,
                 category = it.category,
+                instructor = optionalInstructor.get(),
             )
         }
         repository.save(courseEntity)
@@ -28,6 +37,7 @@ class CourseServiceImpl(val repository: CourseRepository) : CourseService {
                 courseId = it.courseId,
                 name = it.name,
                 category = it.category,
+                instructorId = it.instructor!!.instructorId
             )
         }
     }

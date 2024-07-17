@@ -1,6 +1,7 @@
 package com.kotlinspring.course.catalog.model.course
 
 import jakarta.validation.constraints.NotBlank
+import jakarta.validation.constraints.NotNull
 import java.util.*
 
 data class CourseDTO(
@@ -9,4 +10,6 @@ data class CourseDTO(
     var name: String,
     @get:NotBlank(message = "Course category cannot be blank")
     var category: String,
+    @get:NotNull(message = "InstructorId cannot be null")
+    val instructorId: UUID? = null,
 )

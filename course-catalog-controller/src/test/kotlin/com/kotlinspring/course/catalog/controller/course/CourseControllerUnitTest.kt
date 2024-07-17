@@ -42,10 +42,9 @@ class CourseControllerUnitTest {
         val courseDTO = CourseDTO(
             null,
             "Build Restful APIs using SpringBoot and Kotlin",
-            "Development course")
-
+            "Development course",
+            1.toUUID())
         every { courseServiceMockk.addCourse(any()) } returns courseDTO(1.toUUID())
-
         val savedCourseDTO = webTestClient
             .post()
             .uri("/v1/courses")
@@ -55,7 +54,6 @@ class CourseControllerUnitTest {
             .expectBody(CourseDTO::class.java)
             .returnResult()
             .responseBody
-
         assertTrue {
             savedCourseDTO!!.courseId != null
         }
@@ -63,10 +61,8 @@ class CourseControllerUnitTest {
 
     @Test
     fun validationForAddCourse() {
-        val courseDTO = CourseDTO(null, "","")
-
+        val courseDTO = CourseDTO(null, "","", 1.toUUID())
         every { courseServiceMockk.addCourse(any()) } returns courseDTO(1.toUUID())
-
         val response = webTestClient
             .post()
             .uri("/v1/courses")
@@ -82,7 +78,6 @@ class CourseControllerUnitTest {
     @Test
     fun retrieveAllCourses() {
         every { courseServiceMockk.retrieveAllCourses() } returns courseDTOList()
-
         val coursDtos = webTestClient
             .get()
             .uri("/v1/courses")
@@ -91,7 +86,6 @@ class CourseControllerUnitTest {
             .expectBodyList(CourseDTO::class.java)
             .returnResult()
             .responseBody
-
         assertEquals(2, coursDtos!!.size)
     }
 
@@ -100,7 +94,6 @@ class CourseControllerUnitTest {
         every {
             courseServiceMockk.updateCourse(any(), any())
         } returns CourseDTO(1.toUUID(), "math2", "Mathematics")
-
         val courseDTO = CourseDTO(null, "math2", "Mathematics")
         val updatedCourse = webTestClient
             .put()
@@ -117,7 +110,6 @@ class CourseControllerUnitTest {
     @Test
     fun deleteCourse() {
         every { courseServiceMockk.deleteCourse(any()) } just runs
-
         webTestClient
             .delete()
             .uri("/v1/courses/{course_id}", 1.toUUID())
@@ -127,11 +119,9 @@ class CourseControllerUnitTest {
 
     @Test
     fun runtimeException() {
-        val courseDTO = CourseDTO(null, "math2", "Mathematics")
-
+        val courseDTO = CourseDTO(null, "math2", "Mathematics", 1.toUUID())
         val errorMessage= "Unexpected Error occurred"
         every { courseServiceMockk.addCourse(any()) } throws  RuntimeException(errorMessage)
-
         val response = webTestClient
             .post()
             .uri("/v1/courses")
