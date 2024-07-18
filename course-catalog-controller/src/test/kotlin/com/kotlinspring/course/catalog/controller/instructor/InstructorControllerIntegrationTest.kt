@@ -1,7 +1,6 @@
 package com.kotlinspring.course.catalog.controller.instructor
 
 import com.kotlinspring.course.catalog.controller.AbstractControllerIntegrationTest
-import com.kotlinspring.course.catalog.model.course.CourseDTO
 import com.kotlinspring.course.catalog.model.course.InstructorDTO
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test

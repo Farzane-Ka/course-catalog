@@ -11,7 +11,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgresSQLDialect
 greeting:
   message: greeting from the default profile
-
-

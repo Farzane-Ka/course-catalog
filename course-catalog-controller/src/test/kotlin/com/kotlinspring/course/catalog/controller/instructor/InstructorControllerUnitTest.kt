@@ -2,8 +2,6 @@ package com.kotlinspring.course.catalog.controller.instructor
 
 import com.kotlinspring.course.catalog.controller.config.ControllerTestConfig
 import com.kotlinspring.course.catalog.controller.course.CourseController
-import com.kotlinspring.course.catalog.controller.util.courseDTO
-import com.kotlinspring.course.catalog.model.course.CourseDTO
 import com.kotlinspring.course.catalog.model.course.InstructorDTO
 import com.kotlinspring.course.catalog.service.instructor.InstructorService
 import com.ninjasquad.springmockk.MockkBean
